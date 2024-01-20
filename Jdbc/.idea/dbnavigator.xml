@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="68d7304f-6ddf-416d-8eeb-4df25e4d9d9c">
-      <console name="Connection" type="STANDARD" schema="biblioteka" session="Main"><![CDATA[select * from klienci]]></console>
+      <console name="Connection" type="STANDARD" schema="biblioteka" session="Main"><![CDATA[select * from ksiazki]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -26,6 +26,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="68d7304f-6ddf-416d-8eeb-4df25e4d9d9c" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="68d7304f-6ddf-416d-8eeb-4df25e4d9d9c" dataset="biblioteka.klienci" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />

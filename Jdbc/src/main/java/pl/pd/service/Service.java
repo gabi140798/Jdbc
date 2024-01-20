@@ -1,38 +1,28 @@
 package pl.pd.service;
 
-import pl.pd.exceptions.CarNotFoundException;
-import pl.pd.model.Car;
+import pl.pd.exception.CarNotFound;
+import pl.pd.model.Samochod;
 
 import java.util.*;
 
 public class Service {
 
-    public Car findTheMostExpensiveCar(List<Car> list){
+    public  Samochod mostExpensiveCar(List<Samochod> list) {
         return Optional.ofNullable(list)
-                .orElseGet(Collections::emptyList)
+                .orElse(Collections.emptyList())
                 .stream()
                 .filter(Objects::nonNull)
-                .max(Comparator.comparing(Car::getPrice))
-                .orElseThrow(CarNotFoundException::new);
+                .max(Comparator.comparing(Samochod::getCena))
+                .orElseThrow(CarNotFound::new);
     }
 
-    public List<Car> carsByBrand(List<Car> list, String brand) {
+    public Samochod mostPopularMarka(List<Samochod> list){
         return Optional.ofNullable(list)
-                .orElseGet(Collections::emptyList)
+                .orElse(Collections.emptyList())
                 .stream()
                 .filter(Objects::nonNull)
-                .filter(c -> c.getBrand() != null)
-                .filter(c -> c.getBrand().equals(brand))
-                .toList();
+                .max(Comparator.comparing(Samochod::getMarka))
+                .orElseThrow(CarNotFound::new);
     }
-
-    public Car findTheMostCheapestCar(List<Car> list){
-        return Optional.ofNullable(list)
-                .orElseGet(Collections::emptyList)
-                .stream()
-                .filter(Objects::nonNull)
-                .min(Comparator.comparing(Car::getPrice))
-                .orElseThrow(CarNotFoundException::new);
-    }
-
 }
+
